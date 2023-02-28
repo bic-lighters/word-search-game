@@ -145,6 +145,7 @@ const checkWord = (selection) => {
 const setup = (canvas, ctx, draw, checkWord) => {
   let mouseStart;
   canvas.addEventListener('mousedown', (e) => mouseStart = {x:gridAlign(e.offsetX), y:gridAlign(e.offsetY)});
+
   canvas.addEventListener('mousemove', (e) => {
     if (mouseStart) {
       draw(ctx);
@@ -162,6 +163,30 @@ const setup = (canvas, ctx, draw, checkWord) => {
     draw(ctx);
   });
     document.getElementById("word-search").addEventListener('mouseup', (e) => {
+    mouseStart = null;
+    draw(ctx);
+  });
+
+
+  canvas.addEventListener('touchstart', (e) => {
+    var offsetX = e.targetTouches[0].pageX - e.target.getBoundingClientRect().left;
+    var offsetY = e.targetTouches[0].pageY - e.target.getBoundingClientRect().top;
+    mouseStart = {x:gridAlign(offsetX), y:gridAlign(offsetY)}
+  })
+
+  canvas.addEventListener('touchmove', (e) => {
+    var rect = e.target.getBoundingClientRect();
+    var offsetX = e.targetTouches[0].pageX - e.target.getBoundingClientRect().left;
+    var offsetY = e.targetTouches[0].pageY - e.target.getBoundingClientRect().top;
+    if (mouseStart) {
+      draw(ctx);
+      const mouseEnd = {x:gridAlign(offsetX), y:gridAlign(offsetY)};
+      drawSelection(ctx, mouseStart, mouseEnd, halfChar);
+      checkWord({pos1: mouseStart, pos2: mouseEnd}, checkWord);
+    }
+  });
+
+  canvas.addEventListener('touchend', (e) => {
     mouseStart = null;
     draw(ctx);
   });
