@@ -1,0 +1,44 @@
+body {
+	background-color: rgb(35, 67, 30);
+	color: white;
+	margin-left: 250px;
+}
+
+canvas {
+
+}
+
+#game {
+	display: flex;
+}
+
+#word-search {
+	border: 1px solid white;
+	padding: 35px;
+}
+#wordlist {
+	margin-top: 20px;
+	display: flex;
+	gap: 10px;
+	font-size: 20px;
+	flex-wrap: wrap;
+}
+
+.points-display {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+#upgrades {
+	top: 0;
+	margin-left: 20px;
+}
+
+#upgrades-display button {
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+#change-color {
+	display: none;
+}

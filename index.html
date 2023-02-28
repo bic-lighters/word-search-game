@@ -1,0 +1,32 @@
+<head>
+	<link rel="stylesheet" href="styling.css">
+	<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAPv/AAAAAAADwAAAD/AAABw4AAA73AAAN+wAAHfuAAB//gAAeZ4AAHmeAAA//AAAP/wAAB/4AAAP8AAAA8AAAAAAAAD8PwAA8A8AAOAHAADAAwAAgAEAAIABAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIABAADAAwAA4AcAAPAPAAD8PwAA" rel="icon" type="image/x-icon" />
+</head>
+<body>
+	<div id="game">
+		<div id="word-search">
+			<canvas id="canvas"></canvas>
+			<div id="wordlist">
+				hi these are the words
+			</div>
+		</div>
+
+		<div id="upgrades">
+			<div class="points-display">
+				<span>Points:&nbsp</span>
+				<span id="points">0</span>
+			</div>
+			<div id="upgrades-display"></div>
+		</div>
+	</div>
+	<div id="change-color">
+		Change background color to:
+		<input type="text" id="color-input" placeholder="green, rgb(10, 100, 10)"></input>
+		Change text color to:
+		<input type="text" id="text-input" placeholder="white, rgb(255, 255, 255)"></input>
+	</div>
+	<button id="reset-puzzle">Refresh puzzle</button>
+	
+	<button id="clear-storage">Remove save</button>
+	<script type="module" src="main.js"></script>
+</body>
